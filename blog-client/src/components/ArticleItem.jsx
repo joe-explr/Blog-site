@@ -6,7 +6,7 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 const ArticleItem = ({article: {title, intro, date, user},className}) => {
   return (
     <div className={`rounded-xl overflow-hidden border-2 ${className}`}>
-      <img src={Images.Article} alt="Article" className='object-cover w-full h-auto md:h-46 lg:h-60'/>
+      <img src={Images.Article} alt="Article" className='object-cover max-w-min h-auto md:h-46 lg:h-60'/>
       <div className='p-6'>
         <header className='flex flex-col'>
           <h2><strong>{title}</strong></h2>
