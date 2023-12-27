@@ -40,7 +40,7 @@ const NavListItem= ({item}) => {
         <div className={`${dropDown ? "block":"hidden"} w-max mt-3  lg:absolute lg:bottom-0 lg:transform lg:translate-y-full group-hover:block border border-blue-100 rounded-lg`}>
             <ul className='flex flex-col gap-y-2'>
             {item.item.map((page)=>(
-                <li className='hover:bg-dark-hard hover:text-white p-2'>
+                <li className='hover:bg-dark-hard hover:text-white p-2' key={page}>
                     <a href="/">{page}</a>
                 </li>
             ))}
@@ -59,6 +59,7 @@ const Header = () => {
         setnavBarVisible((state)=>(!state));
     };
   return (
+    <section className='sticky top-0 left-0 right-0 bg-white'>
    <header className='container flex justify-between items-center p-1 mx-auto mb-4'>
     <div className='w-10 h-10'><img src={Images.Logo} alt="Logo"/></div>
     <div className='lg:hidden z-50 ' onClick={setVisibility}>{ navBarVisible ? 
@@ -80,6 +81,7 @@ const Header = () => {
         <button className='rounded-full border-2 border-blue-500 py-2 px-4 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300'>Sign Up</button>
     </div>
    </header>
+   </section>
   )
 }
 

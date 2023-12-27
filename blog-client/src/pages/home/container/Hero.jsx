@@ -22,13 +22,13 @@ const Hero = () => {
                     <span className='inline-block font-bold'>Popular Tags:</span>
                     <ul className='flex flex-wrap gap-x-3'>
                         {tags.map((tag)=>(
-                            <li className='p-1 text-red-500 bg-blue-100 opacity-0.5 font-bold rounded-lg'>{tag}</li>
+                            <li className='p-1 text-red-500 bg-blue-100 opacity-0.5 font-bold rounded-lg' key={tag}>{tag}</li>
                         ))}
                     </ul>
                 </div>
             </div>
             <div className='hidden lg:block'>
-                <img src={Images.Hero} alt="Hero Image"/>
+                <img src={Images.Hero} alt="Hero"/>
             </div>
         </div>
     </section>
