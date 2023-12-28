@@ -8,13 +8,14 @@ const CommentForm = ({action, isCancelable=null,formHandler,toggleEditing}) => {
     const submitHandler = (e) => {
       e.preventDefault();
       formHandler(value);
+      setValue("");
     }
   return (
     <form onSubmit={submitHandler}>
     <div className='flex flex-col items-end gap-y-2 border p-5 rounded-lg border-soft-gray focus-within:border-2 focus-within:border-opacity-60 focus-within:border-primary'>
         <textarea 
         rows="4" 
-        className='w-full focus:outline-none font-roboto'
+        className='w-full focus:outline-none font-roboto bg-transparent'
         placeholder='Leave your comments here..'
         value={value}
         onChange={(e)=>setValue(e.target.value)} />

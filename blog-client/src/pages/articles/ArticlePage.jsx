@@ -54,7 +54,7 @@ const ArticlePage = ({category=""}) => {
   return (
     <MainLayout>
         <section className='container flex flex-col max-w-full p-7 gap-2 lg:flex-row lg:gap-x-5 lg:items-start'>
-          <article className='flex-1 space-y-4'>
+          <article className='flex-1 space-y-4 '>
             <Breadcrumbs data={breadcrumb}/>
             <img src={Images.Article} alt="Post" className='rounded-lg w-full h-auto'/>
             <h2 className='text-lg'><Link path={`/blog/searchCategory=${category}`}>Education</Link></h2>
@@ -65,7 +65,7 @@ incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in n
             </p>
             <CommentContainer/>            
           </article>
-          <LatestPosts posts={NewPosts} header="Latest Articles" className="lg:mt-0 lg:max-w-xs"/>
+          <LatestPosts posts={NewPosts} header="Latest Articles" className="lg:mt-0 lg:max-w-sm"/>
         </section> 
     </MainLayout>
   )

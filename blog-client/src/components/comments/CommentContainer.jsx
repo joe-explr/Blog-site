@@ -34,7 +34,9 @@ const CommentContainer = () => {
     const updatedComments= comments.filter((item)=>{return item._id!==id})
     setComments([...updatedComments]);
   }
-
+  const submitHandler = (value) =>{
+    addCommentHandler(value,null,null)
+  }
 
   useEffect(() => {
     (async() =>{const data = await getCommentsData();
@@ -42,7 +44,9 @@ const CommentContainer = () => {
   }, [])
   return (
     <section className='flex flex-col gap-4'>
-        <CommentForm action="Send" />
+        <CommentForm 
+        action="Send"
+        formHandler={submitHandler} />
         <h2 className='font-roboto font-extrabold'>All Comments({count})</h2>
         <div className='flex flex-col gap-y-3 items-start'>
         {comments.filter((comment)=>{

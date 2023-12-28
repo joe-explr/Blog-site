@@ -20,7 +20,7 @@ const Comment = ({data,hasPermission=true, replies=[],addCommentHandler,updateCo
     deleteCommentHandler(data._id)
   }
   return (
-    <div className='bg-[#F2F4F5] p-4 rounded-md flex items-start gap-x-3'>
+    <div className='bg-[#F2F4F5] p-4 rounded-md flex items-start gap-x-3 w-full'>
         <img src={Images.Avatarimg} alt="comment pfp" className='rounded-full object-cover'/>
         <div className='flex flex-col gap-y-3'>
             <div>
@@ -34,7 +34,7 @@ const Comment = ({data,hasPermission=true, replies=[],addCommentHandler,updateCo
                     })}</h6>
             </div>
             {!isEditing && <p className='text-justify text-base'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi.
+                {data.desc}
             </p>}
             {isEditing && 
             <CommentForm action="Update" 
@@ -53,7 +53,7 @@ const Comment = ({data,hasPermission=true, replies=[],addCommentHandler,updateCo
                 {addToggle && 
                 <CommentForm action="Reply" 
                 isCancelable={true}
-                toggleEditing={()=> setIsEditing((state)=>!state)}
+                toggleEditing={()=> setAddToggle((state)=>!state)}
                 formHandler={addComment}/>
                 }
 
