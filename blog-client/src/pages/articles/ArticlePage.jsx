@@ -5,6 +5,7 @@ import LatestPosts from './container/LatestPosts'
 import { Images } from '../../constants'
 import { Link } from 'react-router-dom'
 import CommentContainer from '../../components/comments/CommentContainer'
+import SocialMediaIcons from '../../components/SocialMediaIcons'
 
 const breadcrumb = [
   {name:"Home", path:"/"},
@@ -53,7 +54,7 @@ const NewPosts = [
 const ArticlePage = ({category=""}) => {
   return (
     <MainLayout>
-        <section className='container flex flex-col max-w-full p-7 gap-2 lg:flex-row lg:gap-x-5 lg:items-start'>
+        <section className='container flex flex-col mx-auto p-7 gap-6 lg:flex-row lg:gap-x-7 lg:items-start'>
           <article className='flex-1 space-y-4 '>
             <Breadcrumbs data={breadcrumb}/>
             <img src={Images.Article} alt="Post" className='rounded-lg w-full h-auto'/>
@@ -65,7 +66,11 @@ incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in n
             </p>
             <CommentContainer/>            
           </article>
+          <div>
           <LatestPosts posts={NewPosts} header="Latest Articles" className="lg:mt-0 lg:max-w-sm"/>
+          <SocialMediaIcons url={encodeURI("https://medium.com/@hpatton/the-end-of-cybersecurity-in-2023-1f68ecd36e15")}
+          title={encodeURIComponent("The End of Cybersecurity in 2023")} />
+          </div>
         </section> 
     </MainLayout>
   )
